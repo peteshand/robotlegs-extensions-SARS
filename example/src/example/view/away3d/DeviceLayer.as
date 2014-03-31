@@ -41,11 +41,11 @@ package example.view.away3d
 		
 		public function init():void
 		{
-			viewPort.alignment = Alignment.LEFT;
-			viewPort.offsetFraction.x = renderModel.instanceIndex * (1 / renderModel.proxySlotsUsed);
-			viewPort.optimalScreenFraction.x = 1 / renderModel.proxySlotsUsed;
-			viewPort.optimalScreenFraction.y = 1;
-			viewPort.zoomType = Dimensions.LETTERBOX;
+			//viewPort.alignment = Alignment.LEFT;
+			//viewPort.offsetFraction.x = renderModel.instanceIndex * (1 / renderModel.proxySlotsUsed);
+			//viewPort.optimalScreenFraction.x = 1 / renderModel.proxySlotsUsed;
+			//viewPort.optimalScreenFraction.y = 1;
+			//viewPort.zoomType = Dimensions.LETTERBOX;
 			
 			this.renderModel.start();
 		}

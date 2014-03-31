@@ -1,5 +1,6 @@
 package 
 {
+	import blaze.utils.layout.Dimensions;
 	import example.config.AppConfig;
 	import example.view.away3d.DeviceLayer;
 	import example.view.starling.StarlingUILayer;
@@ -31,11 +32,14 @@ package
 			
 			Blaze.stage = stage;
 			Blaze.renderer.context3dReadySignal.addOnce(OnContextReady);
-			Blaze.viewPort.optimalScreenDimensions(1920, 1080);
+			
 		}
 		
 		private function OnContextReady():void 
 		{
+			Blaze.viewPort.optimalScreenDimensions(1920, 1080);
+			Blaze.viewPort.zoomType = Dimensions.LETTERBOX;
+			
 			Blaze.addView3D(DeviceLayer, 'device', 0);
 			Blaze.addStarling(StarlingUILayer, 'ui-flat', 1);
 			

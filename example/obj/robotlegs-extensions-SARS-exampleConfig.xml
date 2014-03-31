@@ -32,25 +32,25 @@
     </define>
     <verbose-stacktraces>true</verbose-stacktraces>
     <source-path append="true">
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\example\src</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\src</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\example\src</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\src</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib</path-element>
       <path-element>C:\Program Files (x86)\FlashDevelop\Library\AS3\classes</path-element>
     </source-path>
     <library-path append="true">
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib\as3-signals-v0.9-BETA.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib\away3d-core-fp11_4_1_6.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib\robotlegs-framework-v2.2.0.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib\starling.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\lib\Swiftsuspenders-v2.0.0rc3.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\example\lib\blaze.swc</path-element>
-      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\example\lib\greensock.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib\as3-signals-v0.9-BETA.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib\away3d-core-fp11_4_1_6.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib\robotlegs-framework-v2.2.0.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib\starling.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\lib\Swiftsuspenders-v2.0.0rc3.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\example\lib\blaze.swc</path-element>
+      <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\example\lib\greensock.swc</path-element>
     </library-path>
   </compiler>
   <file-specs>
-    <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS2\example\src\Main.as</path-element>
+    <path-element>C:\Users\pjshand\Desktop\Work\CBA\robotlegs-extensions-SARS\example\src\Main.as</path-element>
   </file-specs>
-  <default-background-color>#FFFFFF</default-background-color>
+  <default-background-color>#000000</default-background-color>
   <default-frame-rate>30</default-frame-rate>
   <default-size>
     <width>800</width>
