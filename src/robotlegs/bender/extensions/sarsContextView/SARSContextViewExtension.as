@@ -11,7 +11,8 @@ package robotlegs.bender.extensions.sarsContextView
 	
 	import flash.display.DisplayObjectContainer;
 	
-	import org.hamcrest.object.instanceOf;
+	//import org.hamcrest.object.instanceOf;
+	import robotlegs.bender.extensions.matching.instanceOfType;
 	import org.swiftsuspenders.Injector;
 	
 	import robotlegs.bender.framework.api.IContext;
@@ -45,9 +46,12 @@ package robotlegs.bender.extensions.sarsContextView
 		/** @inheritDoc **/
 		public function extend(context:IContext):void
 		{
-			_injector = context.injector;
+			_injector = Injector(context.injector);
 			_logger = context.getLogger(this);
-			context.addConfigHandler(instanceOf(DisplayObjectContainer), handleContextView);
+			
+			//modified by Ondina - 01.10.2013
+			//context.addConfigHandler(instanceOf(DisplayObjectContainer), handleContextView);
+			context.addConfigHandler(instanceOfType(DisplayObjectContainer), handleContextView);
 		}
 		
 		/**
@@ -74,8 +78,8 @@ package robotlegs.bender.extensions.sarsContextView
 		private function handleContextView(view:DisplayObjectContainer):void
 		{
 			// ignore Away3D view
-			if (view is View3D)
-				return;
+			/*if (view is View3D)
+				return;*/
 			
 			if (_injector.satisfiesDirectly(DisplayObjectContainer))
 			{

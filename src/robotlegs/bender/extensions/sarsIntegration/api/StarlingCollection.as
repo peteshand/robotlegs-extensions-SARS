@@ -1,7 +1,6 @@
 package robotlegs.bender.extensions.sarsIntegration.api
 {
 	import flash.utils.Dictionary;
-	
 	import starling.core.Starling;
 
 	/**
@@ -13,21 +12,18 @@ package robotlegs.bender.extensions.sarsIntegration.api
 	 * have defined name which will actually be used as named injection of Starling
 	 * view.</p>
 	 */	
-	public class StarlingCollection
+	public class StarlingCollection extends BaseCollection
 	{
 		
-		/*============================================================================*/
-		/* Private Properties
-		/*============================================================================*/
-		
-		/** Collection of all registered Starling views. **/
-		private var _starlingCollection:Dictionary = new Dictionary(true);
-		
-		/**
-		 * Total number of Starling instances in dictionary (since Dictionary doesn't
-		 * keep track of number of items in it, and looping through it is expensive).
-		 */		
-		private var _length:uint = 0;
+		public function StarlingCollection(starlingCollectionData:Array=null) 
+		{
+			if (starlingCollectionData){
+				for (var i:int = 0; i < starlingCollectionData.length; i++) 
+				{
+					addItem(Starling(starlingCollectionData[i][0]), String(starlingCollectionData[i][1]));
+				}
+			}
+		}
 		
 		/*============================================================================*/
 		/* Public Methods
@@ -49,8 +45,8 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		 */		
 		public function addItem(starling:Starling, name:String):uint
 		{
-			if (_starlingCollection[name] == undefined) {
-				_starlingCollection[name] = starling;
+			if (_collection[name] == undefined) {
+				_collection[name] = starling;
 				_length++;
 			}
 			
@@ -69,9 +65,9 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		{
 			var result:Starling = getItem(name);
 			
-//			If Starling instance is found in collection, remove entry
+			//If Starling instance is found in collection, remove entry
 			if (result) {
-				delete _starlingCollection[name];
+				delete _collection[name];
 				_length--;
 			}
 			
@@ -88,31 +84,10 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		 */		
 		public function getItem(name:String):Starling
 		{
-			if (_starlingCollection[name] == undefined)
+			if (_collection[name] == undefined)
 				return null;
 			
-			return Starling(_starlingCollection[name]);
+			return Starling(_collection[name]);
 		}
-		
-		/**
-		 * Get Starling instances in collection.
-		 * 
-		 * @return Returns Starling instances collection. 
-		 */		
-		public function get items():Dictionary
-		{
-			return _starlingCollection;
-		}
-
-		/**
-		 * Number of items in collection.
-		 */		
-		public function get length():uint
-		{
-			return _length;
-		}
-		
-		
-		
 	}
 }

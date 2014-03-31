@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<application xmlns="http://ns.adobe.com/air/application/3.9">
+  <id>robotlegsextensionsSARSexample</id>
+  <versionNumber>1.0</versionNumber>
+  <filename>robotlegsextensionsSARSexample</filename>
+  <name>robotlegs-extensions-SARS-example</name>
+  <initialWindow>
+    <title>robotlegs-extensions-SARS-example</title>
+    <content>robotlegsextensionsSARSexample.swf</content>
+    <systemChrome>standard</systemChrome>
+    <transparent>false</transparent>
+    <visible>true</visible>
+    <minimizable>true</minimizable>
+    <maximizable>true</maximizable>
+    <resizable>true</resizable>
+    <renderMode>direct</renderMode>
+	<depthAndStencil>true</depthAndStencil>
+  </initialWindow>
+  <!-- 
+	More options:
+	http://livedocs.adobe.com/flex/3/html/File_formats_1.html#1043413
+	-->
+</application>

@@ -11,6 +11,7 @@ package robotlegs.bender.extensions.sarsIntegration.impl
 	import away3d.containers.Scene3D;
 	import away3d.containers.View3D;
 	import away3d.events.Scene3DEvent;
+	import robotlegs.bender.extensions.sarsIntegration.api.AwayCollection;
 	
 	import robotlegs.bender.extensions.mediatorMap.api.IMediatorMap;
 	import robotlegs.bender.extensions.sarsIntegration.api.IAway3DViewMap;
@@ -27,9 +28,13 @@ package robotlegs.bender.extensions.sarsIntegration.impl
 		/* Public Properties                                                         */
 		/*============================================================================*/
 		
-		[Inject]
+		//[Inject]
 		/** Instance of View3D which contains scene receiving display objects. **/
-		public var view3D:View3D;
+		//public var view3D:View3D;
+		
+		[Inject]
+		/** Collection of Starling views which will receive display objects. **/
+		public var awayCollection:AwayCollection;
 		
 		[Inject]
 		/** Map for mediating views. **/
@@ -45,14 +50,18 @@ package robotlegs.bender.extensions.sarsIntegration.impl
 		 */		
 		public function init() : void
 		{
-			// listen for ObjectContainer3D events
-			view3D.scene.addEventListener( Scene3DEvent.ADDED_TO_SCENE, onSceneAdded );
-			view3D.scene.addEventListener( Scene3DEvent.REMOVED_FROM_SCENE, onSceneRemoved );
+			var view3D:View3D;
+			
+			for each (view3D in awayCollection.items) 
+			{
+				// listen for ObjectContainer3D events
+				view3D.scene.addEventListener( Scene3DEvent.ADDED_TO_SCENE, onSceneAdded );
+				view3D.scene.addEventListener( Scene3DEvent.REMOVED_FROM_SCENE, onSceneRemoved );
 
-			// add scene as view to allow a Away3D Scene Mediator
-			// Note : we don't support swapping scenes now - one scene will do.
-				
-			addAway3DView( view3D.scene );
+				// add scene as view to allow a Away3D Scene Mediator
+				// Note : we don't support swapping scenes now - one scene will do.
+				addAway3DView( view3D.scene );
+			}
 		}
 
 		/*============================================================================*/
