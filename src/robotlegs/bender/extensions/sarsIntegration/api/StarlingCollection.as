@@ -42,9 +42,13 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		 * @param name Name by which Starling instance will be remembered.
 		 * 
 		 * @return Return number of instances in collection.
-		 */		
+		 */
+		public var starlings:Vector.<Starling> = new Vector.<Starling>();
+		
 		public function addItem(starling:Starling, name:String):uint
 		{
+			starlings.push(starling);
+			
 			if (_collection[name] == undefined) {
 				_collection[name] = starling;
 				_length++;
@@ -64,7 +68,10 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		public function removeItem(name:String):Starling
 		{
 			var result:Starling = getItem(name);
-			
+			for (var i:int = 0; i < starlings.length; i++) 
+			{
+				if (starlings[i] == result) starlings.splice(i, 1);
+			}
 			//If Starling instance is found in collection, remove entry
 			if (result) {
 				delete _collection[name];

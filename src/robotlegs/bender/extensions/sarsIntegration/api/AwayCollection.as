@@ -46,7 +46,6 @@ package robotlegs.bender.extensions.sarsIntegration.api
 				_collection[name] = view3D;
 				_length++;
 			}
-			
 			return _length;
 		}
 		
@@ -62,6 +61,10 @@ package robotlegs.bender.extensions.sarsIntegration.api
 		{
 			var result:View3D = getItem(name);
 			
+			for (var i:int = 0; i < view3Ds.length; i++) 
+			{
+				if (view3Ds[i] == result) view3Ds.splice(i, 1);
+			}
 			//If View3D instance is found in collection, remove entry
 			if (result) {
 				delete _collection[name];
